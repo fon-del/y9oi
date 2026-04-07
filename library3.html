@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slick Slider</title>
+
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .slider {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .slide {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 0 10px;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slide h3 {
+            margin: 15px 0 10px;
+        }
+
+        .slide p {
+            margin: 0;
+            color: #555;
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Slick Slider пример</h1>
+
+    <div class="slider">
+        <div class="slide">
+            <img src="https://picsum.photos/600/300?random=1" alt="Слайд 1">
+            <h3>Слайд 1</h3>
+            <p>Первый слайд</p>
+        </div>
+        <div class="slide">
+            <img src="https://picsum.photos/600/300?random=2" alt="Слайд 2">
+            <h3>Слайд 2</h3>
+            <p>Второй слайд</p>
+        </div>
+        <div class="slide">
+            <img src="https://picsum.photos/600/300?random=3" alt="Слайд 3">
+            <h3>Слайд 3</h3>
+            <p>Третий слайд</p>
+        </div>
+        <div class="slide">
+            <img src="https://picsum.photos/600/300?random=4" alt="Слайд 4">
+            <h3>Слайд 4</h3>
+            <p>Четвертый слайд</p>
+        </div>
+        <div class="slide">
+            <img src="https://picsum.photos/600/300?random=5" alt="Слайд 5">
+            <h3>Слайд 5</h3>
+            <p>Пятый слайд</p>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Slick JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                dots: true,           // точки снизу
+                arrows: true,         // стрелки
+                infinite: true,       // бесконечная прокрутка
+                speed: 600,           // скорость анимации
+                slidesToShow: 3,      // сколько слайдов видно
+                slidesToScroll: 1,    // сколько прокручивать
+                autoplay: true,       // автопрокрутка
+                autoplaySpeed: 2000,  // интервал
+                centerMode: false,
+                adaptiveHeight: false,
+
+                responsive: [
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+
+</body>
+</html>
